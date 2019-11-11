@@ -42,10 +42,10 @@ eventRouter.get("/", async (req, res) => {
 eventRouter.get("/:eventId", async (req, res) => {
   const eventId = getEventId(req, res);
   try {
-    const retrievedEvent = await eventApi.getEventId(eventId);
+    const retrievedEvent = await eventApi.getEventById(eventId);
     return res.status(200).json(retrievedEvent);
   } catch (e) {
-    const errorMessage = `failed to retrieve eventId, check res.json
+    const message = `failed to retrieve eventId, check res.json
     "${eventId}". Please make sureId exists`;
     console.log(message);
     console.error(e);

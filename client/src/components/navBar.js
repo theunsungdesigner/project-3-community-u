@@ -7,13 +7,12 @@ export default class NavBar extends Component {
     render() {
         return (
             <div>
-                {navBar.map((item) => {
-                    return (
-                        <p>
-                            <Link to={``}></Link>
-                        </p>
-                    )
-                })}
+                
+        
+                <p>
+                    <Link to={``}></Link>     
+                </p>
+              
                 
             </div>
         )

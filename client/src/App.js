@@ -17,8 +17,9 @@ function App() {
         {/* put sticky navbar here */}
         <Switch>
           <Route exact path= "/" component={Landing} />
-          <Route exact path= "/" component={singleEvent} />
-          {/* <Route exact path = "/event/:id" component={singleEvent} /> */}
+          <Route exact path= "/event/:eventId" component={singleEvent} />
+          <Route exact path= '/helloworld' component ={HelloWorld} />
+     
         </Switch>
       </Router>
     </div>

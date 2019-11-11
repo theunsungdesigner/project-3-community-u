@@ -4,18 +4,20 @@ import axios from 'axios'
 
 export default class singleEvent extends Component {
     state = {
-        event: {}
+        name: '',
+        food: ''
     }
     componentDidMount() {
         axios.get(`/api/event/${this.props.match.params.eventId}`)
-        .then((event)=>{
-            this.setState({ event: event.data})
+        .then((res)=>{
+            this.setState(res.data)
         })
     }
     render() {
         return (
             <div>
-                
+                <h1>{this.state.name}</h1>
+                <h5>{this.state.food}</h5>
             </div>
         )
     }
