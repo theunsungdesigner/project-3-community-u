@@ -1,27 +1,27 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
-import TextField from '@material-ui/core/TextField';
 import axios from "axios";
 import { Form, Card } from "react-bootstrap";
 
-export default class NewEvent extends Component {
+export default class NewDonation extends Component {
   state = {
-    newEvent: {
-      name: "",
-      organizationType: "",
-      goalBased: ""
+    newDonation: {
+        typeOfDonation: '',
+        food: '',
+        clothing:'', 
+        goods: ''
     }
   };
   handleInputChange = e => {
-    const newEvent = { ...this.state.newEvent };
-    newEvent[e.target.name] = e.target.value;
-    this.setState({ newEvent: newEvent });
+    const newDonation = { ...this.state.newDonation };
+    newDonation[e.target.name] = e.target.value;
+    this.setState({ newDonation: newDonation });
   };
 
-  bttnClicked = event => {
-    // event.preventDefault();
-    axios.post("/api/event", this.state.newEvent).then(newEvent => {
-      console.log(newEvent);
+  bttnClicked = donation => {
+    // donation.prdonationDefault();
+    axios.post("/api/donation", this.state.newDonation).then(newDonation => {
+      console.log(newDonation);
     });
   };
 
@@ -34,25 +34,25 @@ export default class NewEvent extends Component {
       
           <input
             type="text"
-            name="name"
+            name="typeOfDonation"
             placeholder="name"
-            value={this.state.name}
+            value={this.state.typeOfDonation}
             onChange={this.handleInputChange}
           />
 
           <input
             type="text"
-            name="goalBased"
-            placeholder="Whats your goal?"
-            value={this.state.goalBased}
+            name="food"
+            placeholder="food type"
+            value={this.state.food}
             onChange={this.handleInputChange}
           />
 
           <input
             type="text"
-            name="organizationType"
-            placeholder="type-of-organization"
-            value={this.state.organizationType}
+            name="clothing"
+            placeholder="clothing"
+            value={this.state.clothing}
             onChange={this.handleInputChange}
           />
 

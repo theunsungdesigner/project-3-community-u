@@ -5,25 +5,26 @@ import {Link, Redirect} from 'react-router-dom';
 // import TextField from '@material-ui/core/TextField';
 
 
-export default class singleEvent extends Component {
+export default class SingleDonation extends Component {
   state = {
-    singleEvent: {
-      name: "",
-      goalBased: "",
-      organizationType: ""
+    singleDonation: {
+      typeOfDonation: '',
+      food: '',
+      clothing:'', 
+      goods: ''
     },
     redirectHome: false,
     isFormDisplayed: false
   };
   componentDidMount() {
-    axios.get(`/api/event/${this.props.match.params.eventId}`).then(res => {
-      this.setState({ singleEvent: res.data });
+    axios.get(`/api/donation/${this.props.match.params.donationId}`).then(res => {
+      this.setState({ singleDonation: res.data });
     });
   }
 
-  deletedEvent = event => {
+  deletedDonation = donation => {
     
-    axios.delete(`/api/event/${this.props.match.params.eventId}`);
+    axios.delete(`/api/donation/${this.props.match.params.donationId}`);
     //  .then(res => console.log(res.data));
     this.setState({ redirectHome: true });
   };
@@ -34,22 +35,22 @@ export default class singleEvent extends Component {
     });
   };
 
-  handleChange = event => {
-    const cloneEvent = { ...this.state.singleEvent };
-    cloneEvent[event.target.name] = event.target.value;
-    this.setState({ event: cloneEvent });
+  handleChange = donation => {
+    const cloneDonation = { ...this.state.singleDonation };
+    cloneDonation[donation.target.name] = donation.target.value;
+    this.setState({ donation: cloneDonation });
   };
 
-  updateEvent = event => {
-    event.preventDefault();
+  updateDonation = donation => {
+    donation.prdonationDefault();
     axios
-      .put(`/api/event/ ${this.props.match.params.id}`, {
+      .put(`/api/donation/ ${this.props.match.params.id}`, {
         name: this.state.name,
         goalBased: this.state.goalBased,
         organizationType: this.state.organizationType
       })
       .then(res => {
-        this.setState({ singleEvent: res.data, isFormDisplayed: false });
+        this.setState({ singleDonation: res.data, isFormDisplayed: false });
       });
   };
 
@@ -64,11 +65,11 @@ export default class singleEvent extends Component {
       <div>
           
         
-        <h1>{this.state.singleEvent.name}</h1>
-        <h5>{this.state.singleEvent.goalBased}</h5>
-        <h5>{this.state.singleEvent.organizationType}</h5>
+        <h1>{this.state.singleDonation.name}</h1>
+        <h5>{this.state.singleDonation.goalBased}</h5>
+        <h5>{this.state.singleDonation.organizationType}</h5>
 
-        <h3><Link to="/">Return to All Community Events</Link></h3>
+        <h3><Link to="/">Return to All Community Donations</Link></h3>
 
         
         <Button
@@ -76,7 +77,7 @@ export default class singleEvent extends Component {
           color="secondary"
           type="submit"
           value="Delete"
-          onClick={this.deletedEvent }
+          onClick={this.deletedDonation }
         >
           Delete
         </Button>
@@ -86,7 +87,7 @@ export default class singleEvent extends Component {
           color="primary"
           type="submit"
           value="Update"
-          onClick={this.updateEvent}
+          onClick={this.updateDonation}
         >
           update
         </Button>
