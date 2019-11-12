@@ -8,17 +8,29 @@ export default class NewEvent extends Component {
     goalBased: ""
   };
 
-  updatedFunc = e => {
+  updatedName = e => {
 
     this.setState({
-      name : e.target.value,
-      organizationType : e.target.value,
-      goalBased : e.target.value,
+      name : e.target.value
+    });
+  };
+  // organizationType : e.target.value,
+  // goalBased : e.target.value,
+
+  updatedGoal = e =>{
+    this.setState({
+      goalBased : e.target.value
     });
   };
 
-  onSubmit =() =>{
+  updatedOrg = e =>{
+    this.setState({
+    organizationType: e.target.value
+    });
 
+  };
+  bttnClicked =()=>{
+alert('a button was clicked')
   }
 
   render() {
@@ -30,7 +42,7 @@ export default class NewEvent extends Component {
             name="name"
             placeholder="name"
             value={this.state.name}
-            onChange={this.updatedFunc}
+            onChange={this.updatedName}
           />
 
           <input
@@ -38,7 +50,7 @@ export default class NewEvent extends Component {
             goalBased="goalBased"
             placeholder="Whats your goal?"
             value={this.state.goalBased}
-            onChange={this.updatedFunc}
+            onChange={this.updatedGoal}
           />
 
           <input
@@ -46,10 +58,10 @@ export default class NewEvent extends Component {
             organizationType="organizationType"
             placeholder="type-of-organization"
             value={this.state.organizationType}
-            onChange={this.updatedFunc}
+            onChange={this.updatedOrg}
           />
 
-          <Button variant="contained" color="secondary" >
+          <Button variant="contained" color="secondary" onClick={ bttnClicked } >
             Submit
           </Button>
         </form>
