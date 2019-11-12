@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
+import { Redirect ,Link} from 'react-router-dom'
 import NewEvent from './newEvent'
 
 export default class Landing extends Component {
