@@ -8,9 +8,9 @@ export default class NewEvent extends Component {
   };
 
   onChange = e => {
-    const attr = e.target.name;
+    const attr = e.target.value;
     this.setState({
-      [attr]: e.target.value
+      [attr]: e.target.attr
     });
   };
 
@@ -21,13 +21,14 @@ export default class NewEvent extends Component {
           <input
             type="text"
             name="name"
-            placeholder="new-event"
+            placeholder="name"
             value={this.state.name}
             onChange={this.onChange}
           />
+
           <input
             type="text"
-            name="goalBased"
+            goalBased="goalBased"
             placeholder="Whats your goal?"
             value={this.state.goalBased}
             onChange={this.onChange}
@@ -35,7 +36,7 @@ export default class NewEvent extends Component {
 
           <input
             type="text"
-            name="organizationType"
+            organizationType="organizationType"
             placeholder="type-of-organization"
             value={this.state.organizationType}
             onChange={this.onChange}
