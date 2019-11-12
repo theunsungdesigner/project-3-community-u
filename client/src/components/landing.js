@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Redirect ,Link} from 'react-router-dom'
 import NewEvent from './newEvent'
+import NavBar from "./navBar";
 
 export default class Landing extends Component {
   state = {
@@ -20,7 +21,9 @@ export default class Landing extends Component {
     return (
     
       <div>
-        <h1> Community Events</h1>
+        <NavBar />
+        <h4> Community Events</h4>
+        
 
         {/* Accessing the value of message from the state object */}
         {this.state.event.map(event => {

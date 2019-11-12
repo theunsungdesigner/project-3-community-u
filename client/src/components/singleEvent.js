@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Button from "@material-ui/core/Button";
-import {Link, Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom';
+// import TextField from '@material-ui/core/TextField';
+
 
 export default class singleEvent extends Component {
   state = {
@@ -61,12 +63,13 @@ export default class singleEvent extends Component {
     return (
       <div>
           
-        <h1>All Local Events</h1>
+        
         <h1>{this.state.singleEvent.name}</h1>
         <h5>{this.state.singleEvent.goalBased}</h5>
         <h5>{this.state.singleEvent.organizationType}</h5>
 
         <h3><Link to="/">Return to All Community Events</Link></h3>
+
         
         <Button
           variant="contained"
