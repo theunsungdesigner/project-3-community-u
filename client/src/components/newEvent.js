@@ -4,15 +4,22 @@ import Button from "@material-ui/core/Button";
 export default class NewEvent extends Component {
   state = {
     name: "",
-    organizationType: ""
+    organizationType: "",
+    goalBased: ""
   };
 
-  onChange = e => {
-    const attr = e.target.value;
+  updatedFunc = e => {
+
     this.setState({
-      [attr]: e.target.attr
+      name : e.target.value,
+      organizationType : e.target.value,
+      goalBased : e.target.value,
     });
   };
+
+  onSubmit =() =>{
+
+  }
 
   render() {
     return (
@@ -23,7 +30,7 @@ export default class NewEvent extends Component {
             name="name"
             placeholder="name"
             value={this.state.name}
-            onChange={this.onChange}
+            onChange={this.updatedFunc}
           />
 
           <input
@@ -31,7 +38,7 @@ export default class NewEvent extends Component {
             goalBased="goalBased"
             placeholder="Whats your goal?"
             value={this.state.goalBased}
-            onChange={this.onChange}
+            onChange={this.updatedFunc}
           />
 
           <input
@@ -39,10 +46,10 @@ export default class NewEvent extends Component {
             organizationType="organizationType"
             placeholder="type-of-organization"
             value={this.state.organizationType}
-            onChange={this.onChange}
+            onChange={this.updatedFunc}
           />
 
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="secondary" >
             Submit
           </Button>
         </form>
