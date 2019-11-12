@@ -1,67 +1,62 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
+import axios from 'axios'
 
 export default class NewEvent extends Component {
   state = {
-    name: "",
-    organizationType: "",
-    goalBased: ""
-  };
+    newEvent: {
+      name: "",
+      organizationType: "",
+      goalBased: ""
 
-  updatedName = e => {
-
-    this.setState({
-      name : e.target.value
-    });
-  };
-  // organizationType : e.target.value,
-  // goalBased : e.target.value,
-
-  updatedGoal = e =>{
-    this.setState({
-      goalBased : e.target.value
-    });
-  };
-
-  updatedOrg = e =>{
-    this.setState({
-    organizationType: e.target.value
-    });
+    }
 
   };
-  bttnClicked =()=>{
-alert('a button was clicked')
+  handleInputChange = (e) => {
+    const newEvent = { ...this.state.newEvent }
+    newEvent[e.target.name] = e.target.value
+    this.setState({ newEvent: newEvent })
+}
+
+
+  
+  bttnClicked =(event)=>{
+    event.preventDefault()
+    axios.post('/api/event', this.state.newEvent)
+    .then((newEvent)=>{
+      console.log(newEvent)
+    })
   }
 
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.bttnClicked}>
           <input
             type="text"
             name="name"
             placeholder="name"
             value={this.state.name}
-            onChange={this.updatedName}
+            onChange={this.handleInputChange}
           />
 
           <input
             type="text"
-            goalBased="goalBased"
+            name="goalBased"
             placeholder="Whats your goal?"
             value={this.state.goalBased}
-            onChange={this.updatedGoal}
+            onChange={this.handleInputChange}
           />
 
           <input
             type="text"
-            organizationType="organizationType"
+            name="organizationType"
             placeholder="type-of-organization"
             value={this.state.organizationType}
-            onChange={this.updatedOrg}
+            onChange={this.handleInputChange}
           />
 
-          <Button variant="contained" color="secondary" onClick={ bttnClicked } >
+          <Button variant="contained" color="secondary" type="submit">
             Submit
           </Button>
         </form>
