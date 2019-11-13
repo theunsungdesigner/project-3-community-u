@@ -4,11 +4,13 @@ import { Redirect ,Link} from 'react-router-dom'
 import NewEvent from './newEvent'
 import NavBar from "./navBar";
 import NewDonation from "./newDonation"
+import NewVolunteers from "./newVolunteers"
 
 export default class Landing extends Component {
   state = {
     event: [],
-    donation: []
+    donation: [],
+    volunteers: []
   };
 
   componentDidMount() {
@@ -22,6 +24,13 @@ export default class Landing extends Component {
       console.log(res.data);
       this.setState({
         donation: res.data
+      });
+    }) 
+
+    axios.get('/api/volunteers').then(res =>{
+      console.log(res.data);
+      this.setState({
+        volunteers: res.data
       });
     }) 
     
@@ -54,6 +63,17 @@ export default class Landing extends Component {
 
 
         <NewDonation />
+
+        {this.state.volunteers.map(volunteers => {
+          return <div>
+           <Link to={`/volunteers/${volunteers._id}`}>
+           {volunteers.volunteerName}
+           </Link>
+           </div>;
+        })}
+
+
+        <NewVolunteers />
         
 
       </div>

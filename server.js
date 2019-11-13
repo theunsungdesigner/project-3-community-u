@@ -5,6 +5,7 @@ const app = express()
 
 const { eventRouter } = require('./controllers/event.js')
 const { donationRouter }= require('./controllers/donation.js')
+const { volunteersRouter }= require('./controllers/volunteers.js')
 
 
 
@@ -22,6 +23,8 @@ app.use('/api/event', eventRouter)
 
 //sets second api or model to pull in from controller
 app.use('/api/donation', donationRouter)
+
+app.use('/api/volunteers', volunteersRouter)
 
 
 app.get('/*', (req, res) => {

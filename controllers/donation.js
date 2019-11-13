@@ -1,6 +1,20 @@
 const express = require("express");
 const donationApi = require("../models/donations.js");
 const donationRouter = express.Router();
+function getDonationId(req, res) {
+  const donationId = req.params.donationId;
+  // if donationId missing lets throw error
+  if (donationId === "" || donationId === undefined || donationId === null) {
+    const message = `donationId parameter missing from URL. Please check parameters and try again`;
+    console.log(message);
+    res.status(500).json({
+      error: "parameter missing",
+      message
+    });
+    return;
+  }
+  return donationId;
+}
 donationRouter.get("/", async (req, res) => {
   try {
     const retrievedDonation = await donationApi.getAllDonation();
@@ -29,8 +43,6 @@ donationRouter.post("/", async (req, res) => {
     console.log(donationCreated)
     return;
   } catch (e) {
-    
-    
     console.log(e);
     res.status(500).json({
       error: e,
@@ -43,17 +55,14 @@ donationRouter.post("/", async (req, res) => {
 });
 
 donationRouter.delete("/:donationId", async (req, res) => {
-  const eventId = getEventId(req, res);
+  const donationId = getDonationId(req, res);
 
   try {
-    await eventApi.deleteEventById(eventId);
-    const message = `event with eventId ${eventId}, has deleted successfully`;
+    await donationApi.deleteDonationById(donationId);
+    const message = `donation with donationId ${donationId}, has deleted successfully`;
     res.status(202).json(message);
     return;
   } catch (e) {
-    const message = `failed to retrieve event using eventId
-          "${eventId}". Please make sureId exists`;
-    console.log(message);
     console.error(e);
     res.status(500).json({
       error: e,
