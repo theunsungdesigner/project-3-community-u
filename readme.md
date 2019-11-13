@@ -1,5 +1,5 @@
 # Community-U-application
-
+ver. 1.1.2
 # Community-U, an introduction to being a good person
 
 The purpose of this application is to create a platform where local communities can organize events to help others in their local communities. The current ability for people to organize events locally are limited through resources. Community-U empowers its users to have a media outlet for their local events, meet-ups, and fundraisers. This uplifts and allows those whom want to invest their time and resources to make a local impact.
@@ -32,6 +32,12 @@ Here's a direct link to my [GitHub](https://github.com/theunsungdesigner/project
  
  here's a link to the launchable [Heroku](https://community-u-2.herokuapp.com/)
     Here you can check out Community-U to see what's it all about  
+
+
+### Stretch Goals ###
+Solidify UI/UX with React materialize
+create cleaner routing with associations between I.D.'s
+Redesign models to better associations. 
 
    
     
