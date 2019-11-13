@@ -18,6 +18,7 @@ The purpose of this application is to create a platform where local communities 
 ## Wireframes and ERD ##
 https://www.lucidchart.com/invitations/accept/26cbc26d-afac-4835-a436-c8f027d8a87e
 
+Format: ![conceptual design](./images/wireframes)
 
 
 ## Project Boards 
