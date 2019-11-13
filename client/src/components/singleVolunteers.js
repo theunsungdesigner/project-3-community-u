@@ -11,7 +11,9 @@ export default class singleVolunteers extends Component {
         volunteerName: '',
         schoolName:  '',
         organization: ''
-  }
+  },
+  redirectHome: false,
+    isFormDisplayed: false
 }
   componentDidMount() {
     axios.get(`/api/volunteers/${this.props.match.params.volunteersId}`).then(res => {
@@ -42,9 +44,9 @@ export default class singleVolunteers extends Component {
     volunteers.prvolunteersDefault();
     axios
       .put(`/api/volunteers/ ${this.props.match.params.id}`, {
-        name: this.state.volunteerName,
-        goalBased: this.state.schoolName,
-        organizationType: this.state.organization
+        volunteerName: this.state.volunteerName,
+        schoolName: this.state.schoolName,
+        organization: this.state.organization
       })
       .then(res => {
         this.setState({ singleVolunteers: res.data, isFormDisplayed: false });
@@ -62,11 +64,11 @@ export default class singleVolunteers extends Component {
       <div>
           
         
-        <h1>{this.state.singleVolunteers.volunteersName}</h1>
+        <h1>{this.state.singleVolunteers.volunteerName}</h1>
         <h5>{this.state.singleVolunteers.schoolName}</h5>
         <h5>{this.state.singleVolunteers.organization}</h5>
 
-        <h3><Link to="/">Return to All Community Volunteerss</Link></h3>
+        <h3><Link to="/">Return to All Community Volunteers</Link></h3>
 
         
         <Button

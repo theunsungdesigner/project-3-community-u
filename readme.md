@@ -13,7 +13,7 @@ The purpose of this application is to create a platform where local communities 
     * Express.js
     * React.js
 
-**Text** Full C.R.U.D. application with the goal of being a platform used across the world to empower local communities to make measurable change in the betterment of their fellow man/woman.
+**Text** Full C.R.D. application with the goal of being a platform used across the world to empower local communities to make measurable change in the betterment of their fellow man/woman.
 
 
 ## Project Boards 

@@ -42,12 +42,13 @@ export default class SingleDonation extends Component {
   };
 
   updateDonation = donation => {
-    donation.prdonationDefault();
+    donation.preventDefault();
     axios
       .put(`/api/donation/ ${this.props.match.params.id}`, {
-        name: this.state.name,
-        goalBased: this.state.goalBased,
-        organizationType: this.state.organizationType
+        typeOfDonation: this.state.typeOfDonation,
+        food: this.state.food,
+        clothing: this.state.clothing,
+        goods: this.state.goods
       })
       .then(res => {
         this.setState({ singleDonation: res.data, isFormDisplayed: false });
@@ -65,9 +66,10 @@ export default class SingleDonation extends Component {
       <div>
           
         
-        <h1>{this.state.singleDonation.name}</h1>
-        <h5>{this.state.singleDonation.goalBased}</h5>
-        <h5>{this.state.singleDonation.organizationType}</h5>
+        <h1>{this.state.singleDonation.typeOfDonation}</h1>
+        <h5>{this.state.singleDonation.food}</h5>
+        <h5>{this.state.singleDonation.clothing}</h5>
+        <h5>{this.state.singleDonation.goods}</h5>
 
         <h3><Link to="/">Return to All Community Donations</Link></h3>
 
