@@ -6,10 +6,10 @@ import { Form, Card } from "react-bootstrap";
 export default class NewDonation extends Component {
   state = {
     newDonation: {
-        typeOfDonation: '',
-        food: '',
-        clothing:'', 
-        goods: ''
+      typeOfDonation: "",
+      food: "",
+      clothing: "",
+      goods: ""
     }
   };
   handleInputChange = e => {
@@ -20,22 +20,22 @@ export default class NewDonation extends Component {
 
   bttnClicked = donation => {
     // donation.prdonationDefault();
-    axios.post("/api/donation", this.state.newDonation).then(newDonation => {
+    axios.post("/api/donation", this.state.newDonation) 
+    .then(newDonation => {
       console.log(newDonation);
     });
+    // console.log(this.state.newDonation);
   };
-
+  
   render() {
     return (
-     
-        <div>
-
+      <div>
+        
         <form onSubmit={this.bttnClicked}>
-      
           <input
             type="text"
             name="typeOfDonation"
-            placeholder="name"
+            placeholder="type of Donation"
             value={this.state.typeOfDonation}
             onChange={this.handleInputChange}
           />
@@ -56,6 +56,13 @@ export default class NewDonation extends Component {
             onChange={this.handleInputChange}
           />
 
+          <input
+            type="text"
+            name="goods"
+            placeholder="goods"
+            value={this.state.goods}
+            onChange={this.handleInputChange}
+          />
           <Button variant="contained" color="secondary" type="submit">
             Submit
           </Button>
