@@ -5,7 +5,7 @@ import {Link, Redirect} from 'react-router-dom';
 // import TextField from '@material-ui/core/TextField';
 
 
-export default class SingleDonation extends Component {
+export default class singleDonation extends Component {
   state = {
     singleDonation: {
       typeOfDonation: '',

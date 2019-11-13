@@ -19,12 +19,12 @@ export default class NewDonation extends Component {
   };
 
   bttnClicked = donation => {
-    // donation.prdonationDefault();
+    // donation.preventdonationDefault();
     axios.post("/api/donation", this.state.newDonation) 
     .then(newDonation => {
       console.log(newDonation);
     });
-    // console.log(this.state.newDonation);
+   
   };
   
   render() {
