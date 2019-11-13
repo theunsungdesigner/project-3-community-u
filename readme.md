@@ -20,8 +20,8 @@ The purpose of this application is to create a platform where local communities 
 https://trello.com/b/ofP3GHRy/project-3-community-u
 
 ## Project Links
-
+ https://community-u-2.herokuapp.com/
     Here you can check out Community-U to see what's it all about  
 
-    https://community-u-2.herokuapp.com/
+   
     
