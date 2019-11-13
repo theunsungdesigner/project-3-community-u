@@ -21,5 +21,7 @@ https://trello.com/b/ofP3GHRy/project-3-community-u
 
 ## Project Links
 
-    Here you can check out Community-U to see what's it all about <a href ="this-is-a-website"> </a>
+    Here you can check out Community-U to see what's it all about  
+
+    https://community-u-2.herokuapp.com/
     
