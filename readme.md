@@ -6,12 +6,12 @@ The purpose of this application is to create a platform where local communities 
 
 # Technologies used:
 
-    1. HTML5/ CSS
-    1. JavaScript
-    1. MongoDB
-    1. Node.js
-    1. Express.js
-    1. React.js
+    * HTML5/ CSS
+    * JavaScript
+    * MongoDB
+    * Node.js
+    * Express.js
+    * React.js
 
 **Text** Full C.R.U.D. application with the goal of being a platform used across the world to empower local communities to make measurable change in the betterment of their fellow man/woman.
 
