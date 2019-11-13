@@ -17,7 +17,7 @@ The purpose of this application is to create a platform where local communities 
 
 ## Wireframes and ERD ##
 This is the initial ERD mock-up for structure
-<img src="https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/community%20u%20ver%202.png?raw=true" width="350 />
+<img src="https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/community%20u%20ver%202.png?raw=true" width="350" />
 
  This is the conceptual design for the full application
  <img src="https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/wireframe.png?raw=true" width="350" />
