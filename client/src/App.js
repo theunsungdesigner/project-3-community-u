@@ -6,6 +6,7 @@ import Landing from './components/landing.js';
 import navbar from './components/navBar.js';
 import singleEvent from './components/singleEvent.js';
 import singleDonation from './components/singleDonation.js';
+import singleVolunteers from './components/singleVolunteers';
 // class App extends React.Component{
 
 // }
@@ -21,6 +22,8 @@ function App() {
           <Route exact path= "/event/:eventId" component={singleEvent} />
           <Route exact path= "/donation/:donationId" component={singleDonation} />
           <Route exact path= '/helloworld' component ={HelloWorld} />
+          <Route exact path= '/volunteers/:volunteersId' component ={singleVolunteers} />
+          
      
         </Switch>
       </Router>

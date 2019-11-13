@@ -35,6 +35,24 @@ volunteersRouter.get("/", async (req, res) => {
   
 });
 
+volunteersRouter.get("/:volunteersId", async (req, res) => {
+  const volunteersId = getVolunteersId(req, res);
+  try {
+    const retrievedVolunteers = await volunteersApi.getVolunteersById(volunteersId);
+    return res.status(200).json(retrievedVolunteers);
+  } catch (e) {
+    const message = `failed to retrieve volunteersId, check res.json
+    "${volunteersId}". Please make sureId exists`;
+    console.log(message);
+    console.error(e);
+    res.status(404).json({
+      error: e,
+      message
+    });
+    return;
+  }
+});
+
 volunteersRouter.post("/", async (req, res) => {
   const volunteersData = req.body;
   try {

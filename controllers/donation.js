@@ -35,6 +35,24 @@ donationRouter.get("/", async (req, res) => {
   
 });
 
+donationRouter.get("/:donationId", async (req, res) => {
+  const donationId = getDonationId(req, res);
+  try {
+    const retrievedDonation = await donationApi.getDonationById(donationId);
+    return res.status(200).json(retrievedDonation);
+  } catch (e) {
+    const message = `failed to retrieve donationId, check res.json
+    "${donationId}". Please make sureId exists`;
+    console.log(message);
+    console.error(e);
+    res.status(404).json({
+      error: e,
+      message
+    });
+    return;
+  }
+});
+
 donationRouter.post("/", async (req, res) => {
   const donationData = req.body;
   try {

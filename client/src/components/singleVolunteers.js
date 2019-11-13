@@ -16,7 +16,7 @@ export default class singleVolunteers extends Component {
     isFormDisplayed: false
 }
   componentDidMount() {
-    axios.get(`/api/volunteers/${this.props.match.params.volunteersId}`).then(res => {
+    axios(`/api/volunteers/${this.props.match.params.volunteersId}`).then(res => {
       this.setState({ singleVolunteers: res.data });
     });
   }
