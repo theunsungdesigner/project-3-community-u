@@ -20,8 +20,9 @@ The purpose of this application is to create a platform where local communities 
 https://trello.com/b/ofP3GHRy/project-3-community-u
 
 ## Project Links
-[GitHub](https://github.com/theunsungdesigner/project-3-community-u)
- https://community-u-2.herokuapp.com/
+Here's a direct link to my [GitHub](https://github.com/theunsungdesigner/project-3-community-u)
+ 
+ here's a link to the launchable [Heroku](https://community-u-2.herokuapp.com/)
     Here you can check out Community-U to see what's it all about  
 
    
