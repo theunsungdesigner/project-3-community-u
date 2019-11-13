@@ -18,7 +18,8 @@ The purpose of this application is to create a platform where local communities 
 ## Wireframes and ERD ##
 https://www.lucidchart.com/invitations/accept/26cbc26d-afac-4835-a436-c8f027d8a87e
 
- This is the [conceptual design](https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/wireframe.png) for the full application
+ This is the conceptual design for the full application
+ <img src="https://github.com/theunsungdesigner/project-3-community-u/tree/master/images" width="350"
 
 
 ## Project Boards 
