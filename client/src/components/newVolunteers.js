@@ -35,7 +35,7 @@ export default class NewVolunteers extends Component {
             type="text"
             name="volunteerName"
             placeholder="Volunteer's name"
-            value={this.state.VolunteerName}
+            value={this.state.volunteerName}
             onChange={this.handleInputChange}
           />
 

@@ -15,6 +15,10 @@ The purpose of this application is to create a platform where local communities 
 
 **Text** Full C.R.D. application with the goal of being a platform used across the world to empower local communities to make measurable change in the betterment of their fellow man/woman.
 
+## Wireframes and ERD ##
+https://www.lucidchart.com/invitations/accept/26cbc26d-afac-4835-a436-c8f027d8a87e
+
+
 
 ## Project Boards 
  check out my project boards here with [Trello](https://trello.com/b/ofP3GHRy/project-3-community-u)

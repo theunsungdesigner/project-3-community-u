@@ -53,8 +53,7 @@ export default class Landing extends Component {
           return (
             <div>
               <Link to={`/donation/${donation._id}`}>
-                {donation.typeOfDonation}
-                
+                {donation.typeOfDonation} 
               </Link>
             </div>
           );
@@ -76,3 +75,5 @@ export default class Landing extends Component {
     );
   }
 }
+
+

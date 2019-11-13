@@ -20,11 +20,10 @@ app.use(express.static(`${__dirname}/client/build`))
 
 
 app.use('/api/event', eventRouter)
-
 //sets second api or model to pull in from controller
 app.use('/api/donation', donationRouter)
-
-app.use('/api/volunteers', volunteersRouter)
+//sets third api or model to pull from controller
+app.use('/api/volunteers/', volunteersRouter)
 
 
 app.get('/*', (req, res) => {

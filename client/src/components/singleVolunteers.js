@@ -40,7 +40,7 @@ export default class singleVolunteers extends Component {
     this.setState({ volunteers: cloneVolunteers });
   };
 
-  updateVolunteers = volunteers => {
+  updateVolunteers = volunteers => {    
     volunteers.prvolunteersDefault();
     axios
       .put(`/api/volunteers/ ${this.props.match.params.id}`, {
