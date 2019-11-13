@@ -16,7 +16,7 @@ The purpose of this application is to create a platform where local communities 
 **Text** Full C.R.D. application with the goal of being a platform used across the world to empower local communities to make measurable change in the betterment of their fellow man/woman.
 
 ## Wireframes and ERD ##
-https://www.lucidchart.com/invitations/accept/26cbc26d-afac-4835-a436-c8f027d8a87e
+<img src ="https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/community%20u%20ver%202.png?raw=true" width ="350 />
 
  This is the conceptual design for the full application
  <img src="https://github.com/theunsungdesigner/project-3-community-u/blob/master/images/wireframe.png?raw=true" width="350" />
